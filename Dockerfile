@@ -22,10 +22,15 @@ RUN which python && python --version && \
 # Actualiza pip y setuptools a versiones recientes
 RUN pip install --upgrade pip setuptools
 
+
 # Copia los archivos necesarios al contenedor
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir  -r requirements.txt
 COPY app.py .
+
+
+## muestra version de flask instalada
+RUN pip show flask
 
 # Expone el puerto 8080
 EXPOSE 8080

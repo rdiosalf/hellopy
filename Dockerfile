@@ -1,6 +1,9 @@
 # Usa una imagen base oficial de Python
 FROM python:3.11-slim
 
+ARG DNS_SERVER=8.8.8.8
+RUN echo "nameserver ${DNS_SERVER}" > /etc/resolv.conf
+
 # Evita prompts interactivos durante instalaciones
 #ENV DEBIAN_FRONTEND=noninteractive
 

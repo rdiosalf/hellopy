@@ -24,7 +24,7 @@ RUN which python && python --version && \
 
 ### con esto sabré si tengo salida a internet desde el contenedor que estoy montando
 ### si devuelve 200 301 hay acceso a internet desde el contenedor
-RUN apt-get update && apt-get install -y curl && curl -I https://pypi.org
+##RUN apt-get update && apt-get install -y curl && curl -I https://pypi.org---- devuelve 8 295.2 W: Failed to fetch http://deb.debian.org/debian/dists/bookworm/InRelease  Temporary failure resolving 'deb.debian.org' luego no hay acceso a internet
 
 
 

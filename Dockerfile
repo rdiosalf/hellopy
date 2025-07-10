@@ -20,7 +20,12 @@ RUN which python && python --version && \
     which pip && pip --version
 
 # Actualiza pip y setuptools a versiones recientes
-RUN pip install --upgrade pip setuptools
+#RUN pip install --upgrade pip setuptools
+
+### con esto sabré si tengo salida a internet desde el contenedor que estoy montando
+### si devuelve 200 301 hay acceso a internet desde el contenedor
+RUN apt-get update && apt-get install -y curl && curl -I https://pypi.org
+
 
 
 # Copia los archivos necesarios al contenedor
